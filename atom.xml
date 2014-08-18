@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Handwerkliches zu Software]]></title>
-  <link href="http://blog.jander.it/atom.xml" rel="self"/>
-  <link href="http://blog.jander.it/"/>
-  <updated>2014-08-18T13:50:27+02:00</updated>
-  <id>http://blog.jander.it/</id>
+  <title><![CDATA[Phil's Blog]]></title>
+  <link href="http://janderit.github.io/atom.xml" rel="self"/>
+  <link href="http://janderit.github.io/"/>
+  <updated>2014-08-18T14:10:03+02:00</updated>
+  <id>http://janderit.github.io/</id>
   <author>
     <name><![CDATA[Philip Jander]]></name>
     
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Ergänzung Zu 'Warnung Vor Dem Microservice']]></title>
-    <link href="http://blog.jander.it/blog/2014/08/18/kommentar-zu-warnung-vor-dem-microservice/"/>
+    <link href="http://janderit.github.io/blog/2014/08/18/kommentar-zu-warnung-vor-dem-microservice/"/>
     <updated>2014-08-18T11:49:40+02:00</updated>
-    <id>http://blog.jander.it/blog/2014/08/18/kommentar-zu-warnung-vor-dem-microservice</id>
-    <content type="html"><![CDATA[<p>Ralf Westphal <a href="http://blog.ralfw.de/2014/08/warnung-vor-dem-microservice-versuch.html">bloggte</a> gestern seine Betrachtung der aktuellen <a href="http://martinfowler.com/articles/microservices.html">Microservice</a> Bewegung. Die Warnung ist sicher angebracht, und inhaltlich kann ich ihm durchaus zustimmen. Doch ist für mich ein nur nebenbei angesprochener Aspekt grundlegender für die zurückhaltende Betrachtung von Microservices:</p>
+    <id>http://janderit.github.io/blog/2014/08/18/kommentar-zu-warnung-vor-dem-microservice</id>
+    <content type="html"><![CDATA[<p>Ralf Westphal <a href="http://blog.ralfw.de/2014/08/warnung-vor-dem-microservice-versuch.html">bloggte</a> gestern seine Betrachtung der aktuellen <a href="http://martinfowler.com/articles/microservices.html">Microservice</a> Bewegung. Seine Warnung ist sicher angebracht, und inhaltlich kann ich ihm durchaus zustimmen. Doch ist für mich ein nur nebenbei angesprochener Aspekt grundlegender für die zurückhaltende Betrachtung von Microservices.</p>
 
 <p>Einer der Gründe dafür, dass SOA nicht die Erwartungen erfüllte, war die enge Bindung von fachlicher Abgrenzung an physische (Deployment) Abgrenzung. Analoges ist in der klassischen Mehrschichtwelt gut bekannt unter dem Schlagwort <a href="http://software-development-thoughts.blogspot.de/2011/03/layers-are-not-tiers.html">&ldquo;layers != tiers&rdquo;</a>.</p>
 
@@ -36,13 +36,17 @@
 
 <p>Negativ ist die Fixierung auf (reinen) Datenaustausch für fachliche Kommunikation. Dies konterkariert vieles, was mit <a href="http://de.wikipedia.org/wiki/Domain-Driven_Design">Domain Driven Design</a> und <a href="http://www.heise.de/developer/artikel/CQRS-neues-Architekturprinzip-zur-Trennung-von-Befehlen-und-Abfragen-1797489.html">CQRS</a> in den letzten 10 Jahren erarbeitet wurde. Besonders im Rahmen der REST/HTTP Fixierung bringt die Verheissung des leicht zu wartenden Microservice eine Rückverlagerung des Fokusses des Softwaredesigns von Verben auf Substantive mit sich.</p>
 
-<p>Warum sind Microservices aktuell so verlockend? Ich denke, es sind primär diese Eigenschaften: &lsquo;Kleine funktionale Einheiten&rsquo; &lsquo;unabhängige Ausführung&rsquo; &lsquo;Kommunikation durch Nachrichtenaustausch&rsquo; &lsquo;Asynchronität&rsquo; &lsquo;Kapselung fachlichen Verhaltens&rsquo;. Kommt&rsquo;s bekannt vor?</p>
+<p>Für den ersten positiven Aspekt ist die physische Trennung nicht erforderlich, der Mehrwert kann auch in anderen Ansätzen mitgenommen werden. Gleiches gilt für die unabhängige Wahl der Implementierung. Beide negative Aspekte sind mit recht hohen &lsquo;Kosten&rsquo; behaftet, so dass ich den Einsatz von Microservices zumindest immer sehr kritisch abwägen würde. In jedem Fall besteht die Gefahr, dem &ldquo;goldener Hammer&rdquo; auf den Leim zugehen.</p>
 
-<p>Richtig, das ist einer der ältesten Definition von Objektorientierung. Smalltalk und <a href="http://c2.com/cgi/wiki?AlanKaysDefinitionOfObjectOriented">Alan Kay</a> lassen grüßen. Ja, entlang dieser Leitlinien gebaute Software ist besser verständlich, besser wartbar. Dazu benötige ich aber keine physisch getrennten Prozesse, die sowohl im Betrieb (Monitoring, Deployment, Kompatibilität) als auch unter dem Verteilte Systeme Aspekt Herausforderungen mit sich bringen.</p>
+<p>Warum sind Microservices aktuell so verlockend? Ich denke, es sind primär folgende Eigenschaften, die sie attraktiv erscheinen lassen: &lsquo;Kleine funktionale Einheiten&rsquo; &lsquo;unabhängige Ausführung&rsquo; &lsquo;Kommunikation durch Nachrichtenaustausch&rsquo; &lsquo;Asynchronität&rsquo; &lsquo;Kapselung fachlichen Verhaltens&rsquo;.</p>
 
-<p>Und wenn tatsächlich der Betrieb von phyisch verteilten/getrennten Komponenten attraktiv ist? Dann würde ich das aBC Konzept von <a href="http://www.udidahan.com/2006/08/28/podcast-business-and-autonomous-components-in-soa/">Udi Dahan</a> ins Feld führen. Dessen &ldquo;autonome fachliche Komponenten&rdquo; sind auch Zuschnitte entlang fachlicher Grenzen. Allerdings können Sie jeweils verschieden Tiers enthalten. Deren Kommunikation wird nun aber zu einem Implementierungsdetail. Die tatsächlich Integration von verschiedenen Komponenten geschieht durch fachlich motivierte, an CQ[R]S ausgerichtete Schnittstellen. Ob eine Anfrage lokal im physischen Bereich des Aufrufers beantwortet werden kann oder ob ein Rückgriff auf eine andere physische Verteilungseeinheit notwendig ist, liegt im Ermessen der Komponenten bzw. ihres Autors. Auch bei diesem Komponentenansatz kann die tatsächliche Implementierung und Subarchitektur je Komponente individuell gewählt werden. Manche Komponenten enthalten mehrere Tiers. Manche bestehen nur aus einer lokalen Komponente (&ldquo;Dienst&rdquo; im Sinne des taktischen DDD). Und manche &hellip;. bestehen nur aus einen entfernten Dienst - dieser ist äquivalent zu einem Microservice, der sich hier als Grenzfall einer degenerierten Komponente wiederfindet.</p>
+<p>Kommt&rsquo;s bekannt vor?</p>
 
-<p>So sehe ich die aktuelle Microservice-Bewegung aus vielleicht etwas anderem Blickwinkel als Ralf auch kritisch. Wo liegt dann der Einsatzzweck für das doch-nicht-Universalwerkzeug Microservice? Mindestens dort, wo ich evtl. sogar vorher existierende fachlich getrennte und polyglotte Teilsysteme verbinden muss. Dort werden Microservices sich der Herausforderung stellen müssen, ihre Schnittstellen universal zu definieren&hellip; Wie wärs mit XML, gar WDSL? Vielleicht erfinden wir nach OO und Komponenten auch SOA gleich noch mal neu&hellip;</p>
+<p>Richtig, das ist in etwa eine der ältesten Definition von Objektorientierung. Smalltalk und <a href="http://c2.com/cgi/wiki?AlanKaysDefinitionOfObjectOriented">Alan Kay</a> lassen grüßen. Ja, entlang dieser Leitlinien gebaute Software ist besser verständlich, besser wartbar. Dazu benötige ich aber keine physisch getrennten Prozesse, die sowohl im Betrieb (Monitoring, Deployment, Kompatibilität) als auch unter dem Verteilte Systeme Aspekt Herausforderungen mit sich bringen. Und statt getrennten Betriebssystemprozessen reichen vielleicht Actors a la Erlang?</p>
+
+<p>Und wenn tatsächlich der Betrieb von phyisch verteilten/getrennten Komponenten attraktiv ist? Dann würde ich das aBC Konzept von <a href="http://www.udidahan.com/2006/08/28/podcast-business-and-autonomous-components-in-soa/">Udi Dahan</a> ins Feld führen. Dessen &ldquo;autonome fachliche Komponenten&rdquo; sind auch Zuschnitte entlang fachlicher Grenzen. Allerdings können Sie jeweils verschieden physische Tiers enthalten. Deren Kommunikation wird nun aber zu einem Implementierungsdetail. Die tatsächlich Integration von verschiedenen Komponenten geschieht durch fachlich motivierte, an CQ[R]S ausgerichtete Schnittstellen. Ob eine Anfrage lokal im physischen Bereich des Aufrufers beantwortet werden kann oder ob ein Rückgriff auf eine andere physische Verteilungseeinheit notwendig ist, liegt im Ermessen der Komponenten bzw. ihres Autors. Auch bei diesem Komponentenansatz kann die tatsächliche Implementierung und Subarchitektur je Komponente individuell gewählt werden. Manche Komponenten enthalten mehrere Tiers. Manche bestehen nur aus einer lokalen Komponente (&ldquo;Dienst&rdquo; im Sinne des taktischen DDD). Und manche &hellip;. bestehen nur aus einen entfernten Dienst - dieser ist äquivalent zu einem Microservice, der sich hier als Grenzfall einer degenerierten Komponente wiederfindet.</p>
+
+<p>So sehe ich die aktuelle Microservice-Bewegung aus vielleicht etwas anderem Blickwinkel als Ralf auch kritisch. Wo liegt dann der Einsatzzweck für das doch-nicht-Universalwerkzeug Microservice? Mindestens dort, wo ich evtl. sogar vorher existierende fachlich getrennte und polyglotte Teilsysteme verbinden muss. Andererseits: dort werden Microservices sich der Herausforderung stellen müssen, ihre Schnittstellen universal zu definieren&hellip; Wie wärs mit XML, gar WDSL? Vielleicht erfinden wir nach OO und Komponenten auch SOA gleich noch mal neu&hellip;</p>
 ]]></content>
   </entry>
   

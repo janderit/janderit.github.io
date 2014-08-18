@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://blog.jander.it/sitemap.xml 
+Sitemap: http://janderit.github.io/sitemap.xml 
