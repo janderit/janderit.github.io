@@ -4,7 +4,7 @@
   <title><![CDATA[Handwerkliches zu Software]]></title>
   <link href="http://blog.jander.it/atom.xml" rel="self"/>
   <link href="http://blog.jander.it/"/>
-  <updated>2014-08-18T13:04:26+02:00</updated>
+  <updated>2014-08-18T13:13:38+02:00</updated>
   <id>http://blog.jander.it/</id>
   <author>
     <name><![CDATA[Philip Jander]]></name>
@@ -20,15 +20,15 @@
     <id>http://blog.jander.it/blog/2014/08/18/kommentar-zu-warnung-vor-dem-microservice</id>
     <content type="html"><![CDATA[<p>Ralf Westphal <a href="http://blog.ralfw.de/2014/08/warnung-vor-dem-microservice-versuch.html">bloggte</a> gestern seine Betrachtung der aktuellen <a href="http://martinfowler.com/articles/microservices.html">Microservice</a> Bewegung. Die Warnung ist sicher angebracht, und inhaltlich kann ich ihm durchaus zustimmen. Doch ist für mich ein nur nebenbei angesprochener Aspekt grundlegender für die zurückhaltende Betrachtung von Microservices:</p>
 
-<p>Einer der vielen Gründe dafür, dass SOA nicht die Erwartungen erfüllte, war die enge Bindung von fachlicher Abgrenzung an physische (Deployment) Abgrenzung. Ähnliches in der klassischen Mehrschichtwelt auch gut bekannt unter dem Schlagwort <a href="http://software-development-thoughts.blogspot.de/2011/03/layers-are-not-tiers.html">&ldquo;layers != tiers&rdquo;</a>.</p>
+<p>Einer der Gründe dafür, dass SOA nicht die Erwartungen erfüllte, war die enge Bindung von fachlicher Abgrenzung an physische (Deployment) Abgrenzung. Analoges ist in der klassischen Mehrschichtwelt gut bekannt unter dem Schlagwort <a href="http://software-development-thoughts.blogspot.de/2011/03/layers-are-not-tiers.html">&ldquo;layers != tiers&rdquo;</a>.</p>
 
 <p>Genau diese Gleichsetzung sehe ich bei Microservices erneut. Für die anfänglichen Anwender waren sicherlich die Vorteile der Verbindung von Deploymentgrenzen und fachlicher Trennung entscheidend für den Erfolg. So ist dies in die Definition eines Microservice eingeflossen. Durch den momentanen Hype fürchte ich, das dieser Aspekt von vielen anderern Entwicklern unreflektiert übernommen wird, ohne die Auswirkungen zu bedenken.</p>
 
 <p>Was bringt es, einen Microservice zu bauen, der fachliche Abgrenzung und physische Laufzeitabgrenzung vereint? Was ist daran nachteilig?</p>
 
-<p>Positiv ist sicherlich zunächst der Aspekt der fachlichen Abgrenzung überhaupt. Diese ermöglicht eine, passgenauere trennscharfe Entwicklung - bereits durch die Konzentration auf einen Aspekt, erleichtern das Neubauen-statt-Reparieren. Stichwort Bounded Context. Doch dafür benötige ich keine Trennung von Prozessen zur Laufzeit.</p>
+<p>Positiv ist sicherlich zunächst der Aspekt der fachlichen Abgrenzung überhaupt. Diese ermöglicht eine, passgenauere trennscharfe Entwicklung - bereits durch die Konzentration auf einen Aspekt, erleichtern das Neubauen-statt-Reparieren. Stichwort Bounded Context.</p>
 
-<p>Positiv an der Laufzeittrennung ist die Option der Mehrsprachigkeit / Mehr-&lsquo;Runtime&rsquo;-igkeit. Dieser Aspekt war sicherlich kritisch für den anfänglichen Erfolg von auf Microservices basierenden Systemen. Doch wie viele Systeme benötigen diese Option tatsächlich?</p>
+<p>Positiv an der Laufzeittrennung ist die Option der Mehrsprachigkeit / Mehr-&lsquo;Runtime&rsquo;-igkeit. Dieser Aspekt war sicherlich kritisch für den anfänglichen Erfolg von auf Microservices basierenden Systemen.</p>
 
 <p>Positiv ist weiterhin, dass die Implementierung der einzelnen Services völlig unabhängig ist. Hier können jeweils individuell optimale Architekturen / Persistenzstrategien u.ä. gewählt werden.</p>
 
@@ -40,9 +40,9 @@
 
 <p>Richtig, das ist einer der ältesten Definition von Objektorientierung. Smalltalk und <a href="http://c2.com/cgi/wiki?AlanKaysDefinitionOfObjectOriented">Alan Kay</a> lassen grüßen. Ja, entlang dieser Leitlinien gebaute Software ist besser verständlich, besser wartbar. Dazu benötige ich aber keine physisch getrennten Prozesse, die sowohl im Betrieb (Monitoring, Deployment, Kompatibilität) als auch unter dem Verteilte Systeme Aspekt Herausforderungen mit sich bringen.</p>
 
-<p>Und wenn tatsächlich der Betrieb von phyisch verteilten/getrennten Komponenten attraktiv ist? Dann würde ich das aBC Konzept von <a href="http://www.udidahan.com/2006/08/28/podcast-business-and-autonomous-components-in-soa/">Udi Dahan</a> ins Feld führen. Dessen &ldquo;autonome fachliche Komponenten&rdquo; sind auch Zuschnitte entlang fachlicher Grenzen. Allerdings können Sie jeweils verschieden Tiers enthalten. Deren Kommunikation wird nun aber zu einem Implementierungsdetail. Die tatsächlich Integration von verschiedenen Komponenten geschieht durch fachlich motivierte, an CQ[R]S ausgerichtete Schnittstellen. Ob eine Anfrage lokal im physischen Bereich des Aufrufers beantwortet werden kann oder ob ein Rückgriff auf eine andere physische Verteilungseeinheit notwendig ist, liegt im Ermessen der Komponenten bzw. ihres Autors. Auch bei diesem Komponenten Ansatz kann die tatsächliche Implementierung und Subarchitektur je Komponente individuell gewählt werden. Manche Komponenten enthalten mehrere Tiers. Manche bestehen nur aus einer lokalen Komponente (&ldquo;Dienst&rdquo; im Sinne des taktischen DDD). Und manche &hellip;. bestehen nur aus einen entfernten Dienst - dieser ist äquivalent zu einem Microservice, der sich hier als Grenzfall einer degenerierten Komponente wiederfindet.</p>
+<p>Und wenn tatsächlich der Betrieb von phyisch verteilten/getrennten Komponenten attraktiv ist? Dann würde ich das aBC Konzept von <a href="http://www.udidahan.com/2006/08/28/podcast-business-and-autonomous-components-in-soa/">Udi Dahan</a> ins Feld führen. Dessen &ldquo;autonome fachliche Komponenten&rdquo; sind auch Zuschnitte entlang fachlicher Grenzen. Allerdings können Sie jeweils verschieden Tiers enthalten. Deren Kommunikation wird nun aber zu einem Implementierungsdetail. Die tatsächlich Integration von verschiedenen Komponenten geschieht durch fachlich motivierte, an CQ[R]S ausgerichtete Schnittstellen. Ob eine Anfrage lokal im physischen Bereich des Aufrufers beantwortet werden kann oder ob ein Rückgriff auf eine andere physische Verteilungseeinheit notwendig ist, liegt im Ermessen der Komponenten bzw. ihres Autors. Auch bei diesem Komponentenansatz kann die tatsächliche Implementierung und Subarchitektur je Komponente individuell gewählt werden. Manche Komponenten enthalten mehrere Tiers. Manche bestehen nur aus einer lokalen Komponente (&ldquo;Dienst&rdquo; im Sinne des taktischen DDD). Und manche &hellip;. bestehen nur aus einen entfernten Dienst - dieser ist äquivalent zu einem Microservice, der sich hier als Grenzfall einer degenerierten Komponente wiederfindet.</p>
 
-<p>So sehe ich die aktuelle Microservice-Bewegung aus vielleicht etwas anderem Blickwinkel auch kritisch. Wo liegt dann der Einsatzzweck für das doch-nicht-Universalwerkzeug Microservice? Mindestens dort, wo ich evtl. sogar vorher existierende fachlich getrennte und polyglotte Teilsysteme verbinden muss. Dort werden Microservices sich der Herausforderung stellen müssen, ihre Schnittstellen universal zu definieren&hellip; Wie wärs mit XML, gar WDSL? Vielleicht erfinden wir nach OO und Komponenten auch SOA gleich noch mal neu&hellip;</p>
+<p>So sehe ich die aktuelle Microservice-Bewegung aus vielleicht etwas anderem Blickwinkel als Ralf auch kritisch. Wo liegt dann der Einsatzzweck für das doch-nicht-Universalwerkzeug Microservice? Mindestens dort, wo ich evtl. sogar vorher existierende fachlich getrennte und polyglotte Teilsysteme verbinden muss. Dort werden Microservices sich der Herausforderung stellen müssen, ihre Schnittstellen universal zu definieren&hellip; Wie wärs mit XML, gar WDSL? Vielleicht erfinden wir nach OO und Komponenten auch SOA gleich noch mal neu&hellip;</p>
 ]]></content>
   </entry>
   
