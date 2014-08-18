@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Phil's Blog]]></title>
-  <link href="http://janderit.github.io/atom.xml" rel="self"/>
-  <link href="http://janderit.github.io/"/>
-  <updated>2014-08-18T14:10:03+02:00</updated>
-  <id>http://janderit.github.io/</id>
+  <title><![CDATA[Handwerkliches zu Software]]></title>
+  <link href="http://blog.jander.it/atom.xml" rel="self"/>
+  <link href="http://blog.jander.it/"/>
+  <updated>2014-08-18T14:16:58+02:00</updated>
+  <id>http://blog.jander.it/</id>
   <author>
     <name><![CDATA[Philip Jander]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ergänzung Zu 'Warnung Vor Dem Microservice']]></title>
-    <link href="http://janderit.github.io/blog/2014/08/18/kommentar-zu-warnung-vor-dem-microservice/"/>
+    <link href="http://blog.jander.it/blog/2014/08/18/kommentar-zu-warnung-vor-dem-microservice/"/>
     <updated>2014-08-18T11:49:40+02:00</updated>
-    <id>http://janderit.github.io/blog/2014/08/18/kommentar-zu-warnung-vor-dem-microservice</id>
+    <id>http://blog.jander.it/blog/2014/08/18/kommentar-zu-warnung-vor-dem-microservice</id>
     <content type="html"><![CDATA[<p>Ralf Westphal <a href="http://blog.ralfw.de/2014/08/warnung-vor-dem-microservice-versuch.html">bloggte</a> gestern seine Betrachtung der aktuellen <a href="http://martinfowler.com/articles/microservices.html">Microservice</a> Bewegung. Seine Warnung ist sicher angebracht, und inhaltlich kann ich ihm durchaus zustimmen. Doch ist für mich ein nur nebenbei angesprochener Aspekt grundlegender für die zurückhaltende Betrachtung von Microservices.</p>
 
 <p>Einer der Gründe dafür, dass SOA nicht die Erwartungen erfüllte, war die enge Bindung von fachlicher Abgrenzung an physische (Deployment) Abgrenzung. Analoges ist in der klassischen Mehrschichtwelt gut bekannt unter dem Schlagwort <a href="http://software-development-thoughts.blogspot.de/2011/03/layers-are-not-tiers.html">&ldquo;layers != tiers&rdquo;</a>.</p>
